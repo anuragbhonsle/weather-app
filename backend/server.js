@@ -20,16 +20,12 @@ app.get("/weather", async (req, res) => {
     }
 
     const geoRes = await axios.get(
-      `https://nominatim.openstreetmap.org/search`,
+      "https://api.openweathermap.org/geo/1.0/direct",
       {
         params: {
           q: `${city},${country}`,
-          format: "json",
           limit: 1,
-        },
-        headers: {
-          "User-Agent": "WeatherApp/1.0 anuragkbhonsle@gmail.com",
-          Referer: "http://localhost:5000",
+          appid: OPENWEATHER_KEY,
         },
       },
     );
