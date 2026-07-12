@@ -109,11 +109,6 @@ npm start
 npm run dev
 ```
 
----
-
-## 📸 Preview
-
-Add screenshots or a GIF of the application here.
 
 ---
 
