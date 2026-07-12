@@ -45,7 +45,9 @@ app.get("/weather", async (req, res) => {
 
     res.json(weatherRes.data);
   } catch (err) {
-    console.error(err.response?.data || err.message);
+    console.error("Status:", err.response?.status);
+    console.error("URL:", err.config?.url);
+    console.error("Data:", err.response?.data);
 
     res.status(500).json({
       error: "Server error",

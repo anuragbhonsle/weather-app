@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SquigglyText } from "../ui/squiggly-text";
 import { useEffect } from "react";
 import Error from "./Error";
 
 export default function Details() {
+  const navigate = useNavigate();
   const weather = useSelector((state) => state.weather.data);
   const time = useSelector((state) => state.weather.time);
   const nation = useSelector((state) => state.weather.country);
@@ -17,15 +18,13 @@ export default function Details() {
   }
 
   useEffect(() => {
-    console.log(weather);
-  }, [weather]);
-
-  useEffect(() => {
-    if (!weatherData) {
+    if (!weather) {
       navigate("/", { replace: true });
     }
-  }, [weatherData, navigate]);
-  if (!weather || !weather.weather || weather.length === 0) return <Error />;
+  }, [weather, navigate]);
+
+  if (!weather || !weather.weather) return <Error />;
+
   return (
     <div className="flex-1 w-full flex flex-col items-center justify-center p-4 md:p-8 text-white font-mono selection:bg-white-500/30">
       <div className="w-full max-w-3xl backdrop-blur-md bg-black/20 rounded-[2.5rem] border border-white/10 p-6 md:p-10 shadow-2xl flex flex-col gap-3 transition-all duration-300 hover:border-white/20">
