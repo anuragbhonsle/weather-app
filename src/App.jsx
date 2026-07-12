@@ -11,16 +11,13 @@ import {
   useLocation,
 } from "react-router-dom";
 
-// 1. Define the persistent layout with the bottom text link
 function RootLayout() {
   const location = useLocation();
 
   return (
     <div className="relative w-full min-h-screen flex flex-col justify-between">
-      {/* This renders whichever active child page you are currently visiting (Weather, Details, etc.) */}
       <Outlet />
 
-      {/* Persistent mini button text at the bottom. It hides itself if you are already on the /about page */}
       {location.pathname !== "/about" && (
         <div className="pb-4 text-center z-50">
           <Link
@@ -35,7 +32,6 @@ function RootLayout() {
   );
 }
 
-// 2. Set up the nested routing tree
 const router = createBrowserRouter([
   {
     path: "/",
@@ -59,10 +55,8 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  // Pick a random index from 0 to 8
   const number = Math.floor(Math.random() * 8);
 
-  // Define the GIF array
   const bg = [
     "https://i.pinimg.com/originals/09/01/43/0901434384290893f3f67b1065855d60.gif",
     "https://i.pinimg.com/originals/5a/df/17/5adf177d208c14db5a5edf18ab94cb72.gif",
