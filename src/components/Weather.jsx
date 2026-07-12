@@ -45,8 +45,8 @@ export default function Weather() {
   return (
     <>
       <div className="flex-1 w-full flex flex-col items-center justify-center text-white text-shadow-gray-950 text-2xl font-extrabold flex-wrap">
-        <h1 className="flex flex-row m-2 p-2 items-center justify-center text-5xl font-mono animate-pulse [animation-duration:3s] flex-wrap">
-          <SquigglyText scale={[2, 6]}>Weather</SquigglyText>
+        <h1 className="flex justify-center text-center px-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
+          <SquigglyText scale={[2, 6]}>Weather Verse</SquigglyText>
         </h1>
 
         <div className="flex flex-row m-2 p-2 items-center justify-center gap-4 flex-wrap">
