@@ -18,7 +18,7 @@ export default function Weather() {
     setLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:5000/weather?city=${city}&country=${country}`,
+        `https://weather-app-qhjh.onrender.com/weather?city=${encodeURIComponent(city)}&country=${encodeURIComponent(country)}`,
       );
       if (!response.ok) throw new Error("Invalid City or Country");
       const data = await response.json();
