@@ -9,6 +9,13 @@ A modern, responsive weather application built with **React**, **Redux Toolkit**
 
 ---
 
+## 🔗 API Usage
+
+**Example Request**
+https://weather-app-qhjh.onrender.com/weather?city=Pune&country=India
+
+---
+
 ## ✨ Features
 
 - 🔍 Search weather by **City + Country**
